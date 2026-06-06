@@ -39,7 +39,6 @@ export default function ExpenseList({ expenses, onDelete }: ExpenseListProps) {
       {expenses.map((expense) => (
         <ExpenseCard
           key={expense.id}
-          // key = React ka requirement for lists
           // id unique hai → perfect key
           expense={expense}
           onDelete={onDelete}

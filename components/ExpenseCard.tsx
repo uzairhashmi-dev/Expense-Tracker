@@ -24,7 +24,6 @@ type ExpenseCardProps = {
   onDelete: (id: string) => void; // delete button press hone par
 };
 // onDelete parent se aata hai — card khud delete nahi karta
-// Yeh pattern = "lifting state up"
 
 // ─── Helper: date format karo
 function formatDate(dateStr: string): string {
@@ -38,7 +37,6 @@ function formatDate(dateStr: string): string {
 // ─── Component
 export default function ExpenseCard({ expense, onDelete }: ExpenseCardProps) {
   const cfg = CATEGORY_CONFIG[expense.category];
-  // expense.category = "food" → cfg = food ka config
 
   return (
     <div
