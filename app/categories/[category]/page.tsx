@@ -19,7 +19,7 @@ import { useToast } from "@/hooks/useToast";
 
 import type { Expense, ExpenseCategory } from "@/types/expense";
 
-// ─── Category config ──────────────────────────────────────────────────────────
+// ─── Category conf
 const CATEGORY_CONFIG: Record <
   ExpenseCategory,
   { label: string; dot: string; badge: string; icon: string; desc: string }
@@ -35,7 +35,7 @@ const CATEGORY_CONFIG: Record <
 
 const VALID_CATEGORIES = Object.keys(CATEGORY_CONFIG) as ExpenseCategory[];
 
-// ─── Component ────────────────────────────────────────────────────────────────
+// ─── Components
 export default function CategoryPage() {
   const params   = useParams();
   const category = params.category as string;
@@ -45,7 +45,6 @@ export default function CategoryPage() {
   // ── Validate 
   const isValid = VALID_CATEGORIES.includes(category as ExpenseCategory);
   // Pehle check karo URL valid hai ya nahi
-  // Agar /categories/pizza → isValid = false → error UI dikhao
 
   const [localExpenses, setLocalExpenses] = useState<Expense[]>(() =>
     isValid ? getExpensesByCategory(category as ExpenseCategory) : []
